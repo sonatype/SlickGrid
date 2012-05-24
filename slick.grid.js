@@ -1239,6 +1239,9 @@ if (typeof Slick === "undefined") {
         if (row === activeRow && i === activeCell) {
           cellCss += (" active");
         }
+        if (d && m.styleFn) {
+          cellCss += (" " + m.styleFn(row, i, getDataItemValueForColumn(d,m), m, d));
+        }
 
         // TODO:  merge them together in the setter
         for (var key in cellCssClasses) {
