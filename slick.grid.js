@@ -407,7 +407,7 @@ if (typeof Slick === "undefined") {
     }
 
     function unbindAncestorScrollEvents() {
-      $canvas.parents().unbind("scroll.slickgrid");
+      $canvas.parents().unbind("scroll.slickgrid", handleActiveCellPositionChange);
     }
 
     function updateColumnHeader(columnId, title, toolTip) {
