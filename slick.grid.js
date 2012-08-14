@@ -432,6 +432,17 @@ if (typeof Slick === "undefined") {
       var $header = $headerRow.children().eq(idx);
       return $header && $header[0];
     }
+    
+    //SONATYPE CHANGE
+    function getHeader(columnId) {
+        var idx = getColumnIndex(columnId);
+        var $header = $headers.children().eq(idx);
+        return $header && $header[0];
+    }
+    function getScrollbarDimensions() {
+        return scrollbarDimensions || measureScrollbar();
+    }
+    //END SONATYPE CHANGE
 
     function createColumnHeaders() {
       function hoverBegin() {
@@ -2828,6 +2839,10 @@ if (typeof Slick === "undefined") {
       "hideHeaderRowColumns": hideHeaderRowColumns,
       "getHeaderRow": getHeaderRow,
       "getHeaderRowColumn": getHeaderRowColumn,
+      //SONATYPE CHANGE
+      "getHeader": getHeader,
+      "getScrollbarDimensions": getScrollbarDimensions,
+      //END SONATYPE CHANGE
       "getGridPosition": getGridPosition,
       "flashCell": flashCell,
       "addCellCssStyles": addCellCssStyles,
